@@ -1037,7 +1037,7 @@
       "true": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('vnetName'), variables('subnetName'))]",
       "false": "[parameters('subnetId')]"
     },
-    "selectedSubnetId": "[concat('/subscriptions/062ab761-8f9e-4a10-9d08-25f39130c48a/resourceGroups/rg-network-prod-gwc/providers/Microsoft.Network/virtualNetworks/vnet-sap-shared-gwc/subnets/', variables('publicIpName'))]"
+    "selectedSubnetId": "[concat('/subscriptions/062ab761-8f9e-4a10-9d08-25f39130c48a/resourceGroups/rg-network-prod-gwc/providers/Microsoft.Network/virtualNetworks/vnet-sap-shared-gwc/subnets/', parameters('subnetId'))]"
   },
   "resources": [
     {
