@@ -53,7 +53,7 @@
         "description": "The size of the HANA System you want to deploy."
       }
     },
-    "adminUsername": {
+    "adminFFUsername": {
       "type": "string",
       "defaultValue": "localadmin",
       "metadata": {
