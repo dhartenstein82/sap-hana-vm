@@ -80,6 +80,15 @@
     },
     "subnetId": {
       "type": "string",
+      "allowedValues": [
+        "/subscriptions/062ab761-8f9e-4a10-9d08-25f39130c48a/resourceGroups/rg-network-prod-gwc/providers/Microsoft.Network/virtualNetworks/vnet-sap-shared-gwc/subnets/snet-dev-gwc-001",
+        "/subscriptions/062ab761-8f9e-4a10-9d08-25f39130c48a/resourceGroups/rg-network-prod-gwc/providers/Microsoft.Network/virtualNetworks/vnet-sap-shared-gwc/subnets/snet-qua-gwc-001",
+        "/subscriptions/062ab761-8f9e-4a10-9d08-25f39130c48a/resourceGroups/rg-network-prod-gwc/providers/Microsoft.Network/virtualNetworks/vnet-sap-shared-gwc/subnets/snet-prod-gwc-001",
+        "/subscriptions/062ab761-8f9e-4a10-9d08-25f39130c48a/resourceGroups/rg-network-prod-gwc/providers/Microsoft.Network/virtualNetworks/vnet-sap-shared-gwc/subnets/snet-dmz-dev-gwc-001",
+        "/subscriptions/062ab761-8f9e-4a10-9d08-25f39130c48a/resourceGroups/rg-network-prod-gwc/providers/Microsoft.Network/virtualNetworks/vnet-sap-shared-gwc/subnets/snet-dmz-qua-gwc-001",
+        "/subscriptions/062ab761-8f9e-4a10-9d08-25f39130c48a/resourceGroups/rg-network-prod-gwc/providers/Microsoft.Network/virtualNetworks/vnet-sap-shared-gwc/subnets/snet-dmz-prod-gwc-001",
+        "/subscriptions/062ab761-8f9e-4a10-9d08-25f39130c48a/resourceGroups/rg-network-prod-gwc/providers/Microsoft.Network/virtualNetworks/vnet-sap-shared-gwc/subnets/snet-admin-gwc-001"
+      ],
       "defaultValue": "/subscriptions/062ab761-8f9e-4a10-9d08-25f39130c48a/resourceGroups/rg-network-prod-gwc/providers/Microsoft.Network/virtualNetworks/vnet-sap-shared-gwc/subnets/snet-dev-gwc-001",
       "metadata": {
         "description": "The id of the subnet you want to use."
