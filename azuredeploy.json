@@ -53,7 +53,7 @@
         "description": "The size of the HANA System you want to deploy."
       }
     },
-    "adminFFUsername": {
+    "adminUsername": {
       "type": "string",
       "defaultValue": "localadmin",
       "metadata": {
@@ -107,9 +107,8 @@
       "metadata": {
         "description": "Provide mandatory Cost Center ID"
       }
-    }
-  },
-  "cmdb-link": {
+    },
+    "cmdb-link": {
     "type": "string",
     "defaultValue": "",
     "metadata": {
@@ -129,7 +128,8 @@
     "metadata": {
       "description": "Provide the name of the application owner"
     }
-  },
+  }
+},
   "variables": {
     "selectedZones": "[if(equals(parameters('availabilityZone'),0), json('null'), array(parameters('availabilityZone')))]",
     "images": {
