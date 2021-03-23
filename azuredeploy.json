@@ -109,6 +109,27 @@
       }
     }
   },
+  "cmdb-link": {
+    "type": "string",
+    "defaultValue": "28007510",
+    "metadata": {
+      "description": "Provide cmdb link if available"
+    }
+  },
+  "application": {
+    "type": "string",
+    "defaultValue": "28007510",
+    "metadata": {
+      "description": "Provide the name of the application"
+    }
+  },
+  "owner": {
+    "type": "string",
+    "defaultValue": "28007510",
+    "metadata": {
+      "description": "Provide the name of the application owner"
+    }
+  },
   "variables": {
     "selectedZones": "[if(equals(parameters('availabilityZone'),0), json('null'), array(parameters('availabilityZone')))]",
     "images": {
