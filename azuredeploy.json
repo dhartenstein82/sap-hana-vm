@@ -55,7 +55,7 @@
     },
     "adminUsername": {
       "type": "string",
-      "defaultValue": "mimergel",
+      "defaultValue": "localadmin",
       "metadata": {
         "description": "Username for the Virtual Machine."
       }
