@@ -1057,7 +1057,7 @@
       "name": "[concat(variables('nsgName'))]",
       "apiVersion": "2018-10-01",
       "location": "[parameters('location')]",
-      "tags": {"Cost-Center": "[parameters('CostCenter')]"},
+      "tags": {"Cost-Center": "[parameters('CostCenter')]","cmdb-link": "[parameters('cmdb-link')]","application": "[parameters('cmdb-link')]","owner": "[parameters('owner')]"},
       "condition": "[equals(length(parameters('subnetId')), 0)]",
       "properties": {
         "securityRules": "[variables('selectedSecurityRules')]"
@@ -1068,7 +1068,7 @@
       "name": "[variables('vnetName')]",
       "apiVersion": "2018-10-01",
       "location": "[parameters('location')]",
-      "tags": {"Cost-Center": "[parameters('CostCenter')]"},
+      "tags": {"Cost-Center": "[parameters('CostCenter')]","cmdb-link": "[parameters('cmdb-link')]","application": "[parameters('cmdb-link')]","owner": "[parameters('owner')]"},
       "dependsOn": [
         "[concat('Microsoft.Network/networkSecurityGroups/', variables('nsgName'))]"
       ],
@@ -1101,7 +1101,7 @@
         "[concat('Microsoft.Network/virtualNetworks/', variables('vnetName'))]"
       ],
       "location": "[parameters('location')]",
-      "tags": {"Cost-Center": "[parameters('CostCenter')]"},
+      "tags": {"Cost-Center": "[parameters('CostCenter')]","cmdb-link": "[parameters('cmdb-link')]","application": "[parameters('cmdb-link')]","owner": "[parameters('owner')]"},
       "properties": {
         "publicIPAllocationMethod": "Dynamic"
       }
@@ -1115,7 +1115,7 @@
         "[concat('Microsoft.Network/publicIPAddresses/', variables('publicIpName'))]"
       ],
       "location": "[parameters('location')]",
-      "tags": {"Cost-Center": "[parameters('CostCenter')]"},
+      "tags": {"Cost-Center": "[parameters('CostCenter')]","cmdb-link": "[parameters('cmdb-link')]","application": "[parameters('cmdb-link')]","owner": "[parameters('owner')]"},
       "properties": {
         "ipConfigurations": [
           {
@@ -1141,7 +1141,7 @@
       "zones": "[variables('selectedZones')]",
       "apiVersion": "2018-10-01",
       "location": "[parameters('location')]",
-      "tags": {"Cost-Center": "[parameters('CostCenter')]"},
+      "tags": {"Cost-Center": "[parameters('CostCenter')]","cmdb-link": "[parameters('cmdb-link')]","application": "[parameters('cmdb-link')]","owner": "[parameters('owner')]"},
       "properties": {
         "hardwareProfile": {
           "vmSize": "[variables('sizes')[parameters('hanaSystemSize')][parameters('dbType')].vmSize]"
@@ -1183,7 +1183,7 @@
       "name": "[concat(variables('vmName'), '/', variables('csExtension')[variables('internalOSType')].Name)]",
       "apiVersion": "2018-10-01",
       "location": "[parameters('location')]",
-      "tags": {"Cost-Center": "[parameters('CostCenter')]"},
+      "tags": {"Cost-Center": "[parameters('CostCenter')]","cmdb-link": "[parameters('cmdb-link')]","application": "[parameters('cmdb-link')]","owner": "[parameters('owner')]"},
       "dependsOn": [
         "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
       ],
