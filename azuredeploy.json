@@ -111,21 +111,21 @@
   },
   "cmdb-link": {
     "type": "string",
-    "defaultValue": "28007510",
+    "defaultValue": "",
     "metadata": {
       "description": "Provide cmdb link if available"
     }
   },
   "application": {
     "type": "string",
-    "defaultValue": "28007510",
+    "defaultValue": "",
     "metadata": {
       "description": "Provide the name of the application"
     }
   },
   "owner": {
     "type": "string",
-    "defaultValue": "28007510",
+    "defaultValue": "",
     "metadata": {
       "description": "Provide the name of the application owner"
     }
