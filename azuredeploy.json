@@ -15,7 +15,8 @@
       "defaultValue": "HDB",
       "metadata": {
         "description": "HANA System ID."
-      },
+      }
+    },
     "osType": {
       "type": "string",
       "allowedValues": [
