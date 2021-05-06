@@ -27,6 +27,6 @@ steps:
     resourceGroupName: 'HANA-Test-$(Build.BuildId)'
     location: 'Germany West Central'
     templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/mimergel/sap-hana-vm/main/azuredeploy.json'
+    csmFileLink: 'https://raw.githubusercontent.com/dhartenstein82/sap-hana-vm/main/azuredeploy.json'
     overrideParameters: '-adminUsername "$(adminuser)" -sapSystemId "$(sid)" -osType "$(os)" -adminPasswordOrKey "$(sshkey)" -subnetId "$(subnet)"'
     deploymentMode: 'Complete'
