@@ -78,8 +78,8 @@ trigger:
 
 pool:
   # Using my own deployment agents instead of devops agents 
-  # vmImage: 'ubuntu-latest'
-  name: Default
+  vmImage: 'ubuntu-latest'
+  # name: Default
 
 steps:
 - task: PublishPipelineArtifact@1
