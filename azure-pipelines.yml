@@ -68,6 +68,11 @@ parameters:
   - "snet-dmz-prod-gwc-001"
   - "snet-admin-gwc-001"
 
+- name: resourcegroup
+  displayName: Resource Group
+  type: string
+  default: "rg-vm-[vmname]-gwc"
+
 trigger:
   none
 
