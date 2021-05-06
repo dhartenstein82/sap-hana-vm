@@ -94,7 +94,7 @@ steps:
     azureResourceManagerConnection: '$(subscriptionname)'
     subscriptionId: '$(subscription)'
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'HANA-Test-$(Build.BuildId)'
+    resourceGroupName: '${{ parameters.resourcegroup }}'
     location: 'Germany West Central'
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/dhartenstein82/sap-hana-vm/main/azuredeploy.json'
