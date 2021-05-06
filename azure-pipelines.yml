@@ -36,17 +36,17 @@ parameters:
 - name: sid
   displayName: HANA System ID
   type: string
-  default: "HDB"
+  default: "EG1"
 
 - name: nr
   displayName: HANA Instance Number (00-99)
   type: string
-  default: "20"
+  default: "00"
 
 - name: vmname
   displayName: HANA Server Name
   type: string
-  default: "hanatest"
+  default: "ulhnaeg1"
 
 - name: location
   displayName: Target Region
@@ -71,7 +71,7 @@ parameters:
 - name: resourcegroup
   displayName: Resource Group
   type: string
-  default: "rg-vm-[vmname]-gwc"
+  default: "rg-vm-ulhnaeg1-gwc"
 
 trigger:
   none
