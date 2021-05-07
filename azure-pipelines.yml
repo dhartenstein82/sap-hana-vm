@@ -46,7 +46,7 @@ parameters:
 - name: vmname
   displayName: HANA Server Name
   type: string
-  default: "ulhnaeg1"
+  default: ""
 
 - name: location
   displayName: Target Region
@@ -71,7 +71,7 @@ parameters:
 - name: resourcegroup
   displayName: Resource Group
   type: string
-  default: "rg-vm-ulhnaeg1-gwc"
+  default: "rg-vm-[servername]-gwc"
 
 trigger:
   none
