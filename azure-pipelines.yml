@@ -36,7 +36,7 @@ parameters:
 - name: sid
   displayName: HANA System ID
   type: string
-  default: "EG1"
+  default: ""
 
 - name: nr
   displayName: HANA Instance Number (00-99)
