@@ -3,13 +3,83 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+parameters:
+- name: size
+  displayName: HANA VM Size
+  type: string
+  default: 192_GB
+  values:
+  - 128_GB-Non-PRD
+  - 160_GB-Non-PRD
+  - 192_GB
+  - 256_GB
+  - 512_GB
+  - 1.000_GB
+  - 1.792_GB
+  - 2.000_GB
+  - 2.850_GB
+  - 3.892_GB
+  - 5.700_GB
+  - 11.400_GB
+
+- name: os
+  displayName: Operating System
+  type: string
+  default: "RHEL 8"
+  values:
+  - "RHEL 7"
+  - "RHEL 8"
+  - "SLES 12 SP4"
+  - "SLES 12 SP5"
+  - "SLES 15 SP2"
+
+- name: sid
+  displayName: HANA System ID
+  type: string
+  default: ""
+
+- name: nr
+  displayName: HANA Instance Number (00-99)
+  type: string
+  default: "00"
+
+- name: vmname
+  displayName: HANA Server Name
+  type: string
+  default: ""
+
+- name: location
+  displayName: Target Region
+  type: string
+  default: "Germany West Central"
+  values:
+  - "Germany West Central"
+
+- name: subnet
+  displayName: Target Subnet
+  type: string
+  default: "snet-dev-gwc-001"
+  values:
+  - "snet-dev-gwc-001"
+  - "snet-qua-gwc-001"
+  - "snet-prod-gwc-001"
+  - "snet-dmz-dev-gwc-001"
+  - "snet-dmz-qua-gwc-001"
+  - "snet-dmz-prod-gwc-001"
+  - "snet-admin-gwc-001"
+
+- name: resourcegroup
+  displayName: Resource Group
+  type: string
+  default: "rg-vm-[servername]-gwc"
+
 trigger:
   none
 
 pool:
   # Using my own deployment agents instead of devops agents 
-  # vmImage: 'ubuntu-latest'
-  name: Default
+  vmImage: 'ubuntu-latest'
+  # name: Default
 
 steps:
 - task: PublishPipelineArtifact@1
@@ -21,12 +91,12 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: '$(subscriptionname)'
+    azureResourceManagerConnection: '$(connectionname)'
     subscriptionId: '$(subscription)'
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'HANA-Test-$(Build.BuildId)'
+    resourceGroupName: '${{ parameters.resourcegroup }}'
     location: 'Germany West Central'
     templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/mimergel/sap-hana-vm/main/azuredeploy.json'
-    overrideParameters: '-adminUsername "$(adminuser)" -sapSystemId "$(sid)" -osType "$(os)" -adminPasswordOrKey "$(sshkey)" -subnetId "$(subnet)"'
+    csmFileLink: 'https://raw.githubusercontent.com/dhartenstein82/sap-hana-vm/main/azuredeploy.json'
+    overrideParameters: '-adminUsername "$(adminuser)" -vmNameInput "${{ parameters.vmname }}" -hanaSystemId "${{ parameters.sid }}" -hanaSystemSize "${{ parameters.size }}" -osType "${{ parameters.os }}" -adminPasswordOrKey "$(pw)" -subnetId "${{ parameters.subnet }}"'
     deploymentMode: 'Complete'
