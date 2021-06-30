@@ -20,7 +20,7 @@
     "osType": {
       "type": "string",
       "allowedValues": [
-        "RHEL 7",
+        "RHEL 7.",
         "RHEL 8",
         "SLES 12 SP4",
         "SLES 12 SP5",
