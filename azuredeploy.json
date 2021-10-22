@@ -22,10 +22,8 @@
       "allowedValues": [
         "RHEL 7",
         "RHEL 8",
-        "SLES 12 SP4",
-        "SLES 12 SP5",
-        "SLES 15 SP2"
-      ],
+        "D-RHEL8.1"
+       ],
       "defaultValue": "SLES 12 SP4",
       "metadata": {
         "description": "The type of the operating system you want to deploy."
@@ -142,23 +140,10 @@
         "publisher": "RedHat",
         "OSType": "Linux"
       },
-      "SLES 12 SP4": {
-        "sku": "12-sp4-gen2",
-        "offer": "SLES-SAP",
-        "publisher": "SUSE",
-        "OSType": "Linux"
-      },
-      "SLES 12 SP5": {
-        "sku": "gen2",
-        "offer": "sles-sap-12-sp5",
-        "publisher": "SUSE",
-        "OSType": "Linux"
-      },
-      "SLES 15 SP2": {
-        "sku": "gen2",
-        "offer": "sles-sap-15-sp2",
-        "publisher": "SUSE",
-        "OSType": "Linux"
+      "D-RHEL8.1": {
+        "publisher": "DEKRA",
+        "OSType": "Linux",
+        "id": "/subscriptions/062ab761-8f9e-4a10-9d08-25f39130c48a/resourceGroups/rg-shared-prod-gwc/providers/Microsoft.Compute/galleries/DEKRA_RHEL8_SAP/images/DEKRA-CUSTOM/versions/1.0.0"
       }
     },
     "internalOSType": "[variables('images')[parameters('osType')].OSType]",
@@ -1199,11 +1184,8 @@
         },
         "storageProfile": {
           "imageReference": {
-            "publisher": "[variables('images')[parameters('osType')].publisher]",
-            "offer": "[variables('images')[parameters('osType')].offer]",
-            "sku": "[variables('images')[parameters('osType')].sku]",
-            "version": "latest"
-          },
+            "id": "[variables('images')[parameters('osType')].id]"
+            },
           "osDisk": {
             "name": "[concat(variables('vmName'), '-osdisk')]",
             "caching": "ReadWrite",
